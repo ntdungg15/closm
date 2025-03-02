@@ -1,14 +1,31 @@
-import React, { useState } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, Button, StyleSheet, 
+  Alert, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback, 
+  TextInput, Keyboard } from "react-native";
 
 const HomeScreen = () => {
   const [count, setCount] = useState(0);
+  // , []) one time
+  useEffect(() => {
+    console.log("Component render!");
+  });
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Chào mừng đến với Closm!</Text>
       <Text style={styles.subtitle}>Closm nơi tạo ra phong cách cho bạn!</Text>
 
+      {/* TouchableOpacity bluf khi click */}
+      <TouchableOpacity onPress={() => Alert.alert("Chào mừng bạn đã đến với Closm!")}>
+        <Text style={{ padding: 10, backgroundColor: "blue", color: "white" }}>
+          Welcome!
+        </Text>
+      </TouchableOpacity>
+
+
+
+      {/* <Text>Count: {count}</Text> */}
+      {/* <Button title="Tăng" onPress={() => setCount(count + 1)} /> */}
     </View>
   );
 };
