@@ -1,9 +1,12 @@
 import { Stack } from "expo-router";
+import { StateProvider } from "../context/StateContext";
 
 export default function TabsLayout() {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="index" />
-    </Stack>
+    <StateProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+      </Stack>
+    </StateProvider>
   );
 }
