@@ -1,8 +1,23 @@
-import React, { useState } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  Alert,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableWithoutFeedback,
+  TextInput,
+  Keyboard,
+} from "react-native";
 
 const HomeScreen = () => {
   const [count, setCount] = useState(0);
+  // , []) one time
+  useEffect(() => {
+    console.log("Component render!");
+  });
 
   return (
     <View style={styles.container}>
