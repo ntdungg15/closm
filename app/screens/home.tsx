@@ -8,7 +8,6 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Chào mừng đến với Closm!</Text>
       <Text style={styles.subtitle}>Closm nơi tạo ra phong cách cho bạn!</Text>
-
     </View>
   );
 };
