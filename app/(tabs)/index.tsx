@@ -1,5 +1,6 @@
 import { View, StyleSheet } from 'react-native';
 
+
 import Button from '@/components/imageview/Button';
 import ImageViewer from '@/components/imageview/ImageViewer';
 
@@ -7,6 +8,7 @@ const PlaceholderImage = require('../../assets/images/backhome.jpg');
 
 export default function Index() {
   return (
+
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} />
