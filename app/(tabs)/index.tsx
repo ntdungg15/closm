@@ -1,23 +1,35 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/home";
-import { Text, View } from "react-native";
+import { View, StyleSheet } from 'react-native';
 
-const Tab = createBottomTabNavigator();
+import Button from '@/components/imageview/Button';
+import ImageViewer from '@/components/imageview/ImageViewer';
 
-export default function Tabs() {
+const PlaceholderImage = require('../../assets/images/backhome.jpg');
+
+export default function Index() {
   return (
-    // ẩn navigation home
-    // <Tab.NavigatorscreenOptions={{ headerShown: false }}>
-    <Tab.Navigator >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen
-        name="Explore"
-        component={() => (
-          <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>explore</Text>
-          </View>
-        )}
-      />
-    </Tab.Navigator>
+    <View style={styles.container}>
+      <View style={styles.imageContainer}>
+        <ImageViewer imgSource={PlaceholderImage} />
+      </View>
+      <View style={styles.footerContainer}>
+        <Button theme="primary" label="Choose a photo" />
+        <Button label="Use this photo" />
+      </View>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    alignItems: 'center',
+  },
+  imageContainer: {
+    flex: 1,
+  },
+  footerContainer: {
+    flex: 1 / 3,
+    alignItems: 'center',
+  },
+});
